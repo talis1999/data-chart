@@ -1,6 +1,5 @@
 import { useState, createContext, useEffect } from "react";
 import { fetchAll } from "../utils/fetchData.js";
-import timeUnits from "../utils/timeUnits.js";
 
 export const DataContext = createContext();
 
@@ -14,11 +13,11 @@ export const DataProvider = ({ children }) => {
   }, []);
 
   const [data, setData] = useState([]);
-  const [timeUnit, setTimeUnit] = useState("1 minute");
+  const [timeUnit, setTimeUnit] = useState(0);
   const [loading, setLoading] = useState(false);
   return (
     <DataContext.Provider
-      value={{ timeUnit, setTimeUnit, data: data[timeUnits[timeUnit]],loading }}
+      value={{ timeUnit, setTimeUnit, data: data[timeUnit], loading }}
     >
       {children}
     </DataContext.Provider>

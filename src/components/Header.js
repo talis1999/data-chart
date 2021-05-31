@@ -1,7 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Divider, CircularProgress } from "@material-ui/core";
 import TimelineIcon from "@material-ui/icons/Timeline";
-import TimeUnitMenu from "./TimeUnitMenu.js";
 
 import { useContext } from "react";
 import { DataContext } from "./DataProvider.js";
@@ -47,7 +46,6 @@ const Header = () => {
           Data-chart
           {loading && <CircularProgress color="inherit" size={20} />}
         </Typography>
-        <TimeUnitMenu />
       </div>
       <Divider />
     </div>
